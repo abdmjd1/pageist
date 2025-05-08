@@ -5,7 +5,7 @@ import {
   signUpWithEmail,
   signInWithEmail,
   signInWithGoogle,
-  logout,
+  logOut,
 } from "../services/authService";
 
 type UserType = User | null;
@@ -15,7 +15,7 @@ type AuthContextType = {
   signUpWithEmail: (email: string, password: string) => void;
   signInWithEmail: (email: string, password: string) => void;
   signInWithGoogle: () => void;
-  logout: () => void;
+  logOut: () => void;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -47,7 +47,7 @@ export function AuthContextProvider({
         signUpWithEmail,
         signInWithEmail,
         signInWithGoogle,
-        logout,
+        logOut,
       }}
     >
       {children}
