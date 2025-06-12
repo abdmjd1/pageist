@@ -7,37 +7,18 @@ import {
 } from "firebase/auth";
 
 export const signUpWithEmail = async (email: string, password: string) => {
-  try {
-    await createUserWithEmailAndPassword(auth, email, password);
-  } catch (error) {
-    console.log(error);
-    throw new Error("failed to sign up with email and password");
-  }
+  await createUserWithEmailAndPassword(auth, email, password);
 };
 
 export const signInWithEmail = async (email: string, password: string) => {
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-  } catch (error) {
-    console.log(error);
-    throw new Error("failed to sign in with email and password");
-  }
+  await signInWithEmailAndPassword(auth, email, password);
 };
 
 export const signInWithGoogle = async () => {
-  try {
-    await signInWithPopup(auth, googleProvider);
-  } catch (error) {
-    console.log(error);
-    throw new Error("failed to sign in with google auth provider");
-  }
+  await signInWithPopup(auth, googleProvider);
 };
 
 export const logOut = async () => {
-  try {
-    await signOut(auth);
-  } catch (error) {
-    console.error(error);
-    throw new Error("failed to log out");
-  }
+  await signOut(auth);
+};
 };
