@@ -1,0 +1,45 @@
+.input {
+  border: none;
+  background: none;
+  font: inherit;
+
+  max-width: 20rem;
+  width: 100%;
+  min-height: 38px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(var(--txt-clr-1), 0.15);
+  border-radius: calc(0.5rem - 2px);
+  color: hsl(var(--txt-clr-1));
+  background-color: hsl(var(--bg-clr-1));
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.25rem;
+  color: hsl(var(--txt-clr-1));
+}
+
+.error {
+  color: hsl(var(--txt-clr-red));
+  font-size: 0.75rem;
+  line-height: 1rem;
+  transition: color 0.3s;
+}
+
+/* this is a workaround to override chrome's default autofill styles for input elements*/
+/* source: https://stackoverflow.com/a/14205976 */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  background-color: hsl(var(--bg-clr-1)) !important;
+  -webkit-text-fill-color: hsl(var(--txt-clr-1)) !important;
+
+  /* this keeps the caret/blinking text cursor from disappearing on autofill */
+  caret-color: hsl(var(--txt-clr-1)) !important;
+
+  transition-property: background-color;
+  transition-delay: 5000s;
+  /* The 5000 seconds transition delay is intentional. It delays Chrome's autofill background style so long that the user never sees them */
+}
