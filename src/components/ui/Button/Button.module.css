@@ -1,0 +1,149 @@
+:where(.button) {
+  border: none;
+  background: none;
+  font: inherit;
+
+  width: fit-content;
+  border: 1px solid transparent;
+  border-radius: calc(0.5rem - 2px);
+  color: hsl(var(--txt-clr-1));
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.1s, color 0.15s,
+    outline-offset 0.2s cubic-bezier(0.5, 1.7, 0.7, 1.3);
+
+  /* this aligns the icons with the text in buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* VARIANTS */
+:where(.button--ghost),
+:where(.button--outline),
+:where(.button--ghost-danger) {
+  background-color: transparent;
+  color: hsl(var(--txt-clr-2));
+
+  &:hover {
+    background-color: hsl(var(--bg-clr-3));
+  }
+
+  &:active {
+    background-color: hsl(var(--bg-clr-2));
+  }
+
+  &:disabled {
+    background-color: hsl(var(--txt-clr-3), 0.15);
+    color: hsl(var(--txt-clr-3));
+  }
+}
+
+:where(.button--outline) {
+  border: 1px solid hsl(var(--txt-clr-1), 0.15);
+}
+
+:where(.button--ghost-danger) {
+  color: hsl(var(--txt-clr-red));
+}
+
+:where(.button--solid) {
+  background-color: hsl(var(--txt-clr-1));
+  color: hsl(var(--bg-clr-1));
+
+  &:hover {
+    background-color: hsl(var(--txt-clr-1), 0.9);
+  }
+
+  &:active {
+    background-color: hsl(var(--txt-clr-1), 0.8);
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: hsl(var(--txt-clr-1), 0.7);
+  }
+}
+
+:where(.button--danger) {
+  background-color: hsl(var(--txt-clr-red));
+  /*same white color as var(--txt-clr-1) but i don't want it to change regardless of the current theme: */
+  color: hsl(210, 17%, 98%);
+
+  &:hover {
+    background-color: hsl(var(--txt-clr-red), 0.9);
+  }
+
+  &:active {
+    background-color: hsl(var(--txt-clr-red), 0.8);
+  }
+
+  &:disabled {
+    background-color: hsl(var(--txt-clr-red), 0.7);
+  }
+}
+
+/* SIZES */
+:where(.button--lg) {
+  height: 38px;
+  padding: 0 1rem;
+}
+
+:where(.button--md) {
+  height: 32px;
+  padding: 0.75rem;
+}
+
+:where(.button--sm) {
+  height: 28px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+
+  svg {
+    padding: 0;
+    min-height: 16px;
+    min-width: 16px;
+  }
+}
+
+:where(.button--xs) {
+  height: 22px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+
+  svg {
+    padding: 0;
+    min-height: 14px;
+    min-width: 14px;
+  }
+}
+
+/* ICON ONLY BUTTONS SIZES*/
+:where(.button--icon-md) {
+  aspect-ratio: 1/1;
+  padding: 0;
+  min-height: 20px;
+  min-width: 20px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+:where(.button--icon-sm) {
+  aspect-ratio: 1/1;
+  padding: 0;
+  min-height: 16px;
+  min-width: 16px;
+}
+
+:where(.button--icon-xs) {
+  aspect-ratio: 1/1;
+}
