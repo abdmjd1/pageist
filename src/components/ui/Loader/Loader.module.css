@@ -1,0 +1,22 @@
+.loader {
+  animation: spin 1.5s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.loader--sm {
+  font-size: 1.25rem;
+}
+
+.loader--lg {
+  font-size: 1.75rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
