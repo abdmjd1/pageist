@@ -1,4 +1,5 @@
 import styles from "./PasswordResetForm.module.css";
+import logo from "../../assets/logo.svg";
 import { FaArrowLeft } from "react-icons/fa";
 import { useState } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -37,7 +38,7 @@ function PasswordResetForm() {
     <FormProvider {...methods}>
       <main className={styles.main}>
         <header>
-          <img className={styles.logo} src="/src/assets/logo.svg" alt="logo" />
+          <img className={styles.logo} src={logo} alt="logo" />
           <h1>Forgot password?</h1>
           <p>No worries, we'll send you reset instructions</p>
         </header>
