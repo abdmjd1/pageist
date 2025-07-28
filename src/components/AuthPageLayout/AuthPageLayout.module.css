@@ -1,0 +1,42 @@
+.container {
+  height: 100dvh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: "centered";
+  overflow: hidden;
+}
+
+.container > * {
+  grid-area: centered;
+}
+
+.bg-gradient {
+  background-color: #d499ff;
+  background-image: radial-gradient(
+      at 31% 42%,
+      hsla(273, 63%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 96% 78%, hsla(2, 60%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 15% 7%, hsla(223, 61%, 64%, 1) 0px, transparent 50%),
+    radial-gradient(at 76% 9%, hsla(142, 77%, 75%, 1) 0px, transparent 50%),
+    radial-gradient(at 11% 83%, hsla(299, 93%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 5% 3%, hsla(62, 71%, 78%, 1) 0px, transparent 50%),
+    radial-gradient(at 57% 37%, hsla(14, 60%, 76%, 1) 0px, transparent 50%);
+
+  width: min(35rem, 100%);
+  aspect-ratio: 2 / 1.7;
+  z-index: 1;
+
+  animation: rotate-gradient-hue 10s infinite linear;
+}
+
+@keyframes rotate-gradient-hue {
+  0% {
+    filter: blur(100px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(100px) hue-rotate(360deg);
+  }
+}

@@ -126,27 +126,58 @@ table {
   border-spacing: 0;
 }
 
+input,
+button {
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+#root,
+#root > * {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+
+  &:focus-visible {
+    outline: 2px solid hsl(var(--txt-clr-1));
+    border-radius: calc(0.5rem - 2px);
+    outline-offset: 0.2rem;
+    transition: outline-offset 0.2s cubic-bezier(0.5, 1.7, 0.7, 1.3);
+  }
+
+  &:focus-visible:active {
+    outline-offset: 0;
+  }
 }
 
 :root {
-  --bg-clr-1: hsl(0, 0%, 10%);
-  --bg-clr-2: hsl(0, 0%, 13%);
-
-  --txt-clr-1: hsl(210, 17%, 98%);
-  --txt-clr-2: hsl(240, 5%, 64%);
+  --bg-clr-1: 0, 0%, 10%;
+  --bg-clr-2: 0, 0%, 12%;
+  --bg-clr-3: 0, 0%, 14%;
+  --txt-clr-1: 210, 17%, 98%;
+  --txt-clr-2: 225, 11%, 81%;
+  --txt-clr-3: 240, 5%, 64%;
+  --txt-clr-red: 0, 70%, 60%;
+  --txt-clr-green: 142, 60%, 55%;
 }
 
 body {
-  height: 100vh;
+  height: 100dvh;
   max-width: 1280px;
   margin: 0 auto;
-  background-color: var(--bg-clr-1);
-  color: var(--txt-clr-1);
+  background-color: hsl(var(--bg-clr-1));
+  color: hsl(var(--txt-clr-1));
+  font-size: 0.875rem;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
 
@@ -155,4 +186,21 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(var(--txt-clr-1));
+
+  &:active {
+    color: hsl(var(--txt-clr-2));
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+
+  /* this looks nicer for links than the 0.5rem radius in the universal selector */
+  &:focus-visible {
+    border-radius: calc(0.25rem - 2px);
+  }
 }
