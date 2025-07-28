@@ -1,6 +1,7 @@
 import { FirebaseError } from "firebase/app";
 import { useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import logo from "../../assets/logo.svg";
 import { FaGoogle } from "react-icons/fa6";
 import { PiTestTubeFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
@@ -71,7 +72,7 @@ function AuthForm({ mode = "signup" }: { mode: ModeType }) {
     <FormProvider {...methods}>
       <main className={styles.main}>
         <header>
-          <img className={styles.logo} src="/src/assets/logo.svg" alt="logo" />
+          <img className={styles.logo} src={logo} alt="logo" />
           <h1>{mode === "signup" ? "Create an account" : "Welcome back"}</h1>
           <p>Please enter your details</p>
         </header>
