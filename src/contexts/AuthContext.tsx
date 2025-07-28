@@ -13,6 +13,7 @@ type UserType = User | null;
 
 type AuthContextType = {
   user: UserType;
+  loading: boolean;
   signUpWithEmail: (email: string, password: string) => void;
   signInWithEmail: (email: string, password: string) => void;
   signInWithGoogle: () => void;
@@ -28,14 +29,12 @@ export function AuthContextProvider({
   children: React.ReactNode;
 }) {
   const [user, setUser] = useState<UserType>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        //redirect user to sign in page
-      }
+      setUser(currentUser);
+      setLoading(false);
     });
 
     // clean up function to unsub from onAuthStateChanged listener on unmount
@@ -46,6 +45,7 @@ export function AuthContextProvider({
     <AuthContext.Provider
       value={{
         user,
+        loading,
         signUpWithEmail,
         signInWithEmail,
         signInWithGoogle,
