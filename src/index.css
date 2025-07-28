@@ -126,13 +126,6 @@ table {
   border-spacing: 0;
 }
 
-input,
-button {
-  border: none;
-  background: none;
-  font: inherit;
-}
-
 html {
   scrollbar-gutter: stable;
 }
