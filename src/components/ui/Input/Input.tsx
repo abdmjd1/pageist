@@ -24,7 +24,7 @@ function Input({
 
   return (
     <div>
-      {label && <label htmlFor={`${name}-input`}>{label}</label>}
+      {label && <label htmlFor={`${name}-input`} className={styles.label}>{label}</label>}
       <input
         type={type}
         {...register(name, {

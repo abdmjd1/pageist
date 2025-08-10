@@ -39,7 +39,7 @@ function PasswordResetForm() {
       <main className={styles.main}>
         <header>
           <img className={styles.logo} src={logo} alt="logo" />
-          <h1>Forgot password?</h1>
+          <h1 className={styles.title}>Forgot password?</h1>
           <p>No worries, we'll send you reset instructions</p>
         </header>
 
@@ -47,7 +47,7 @@ function PasswordResetForm() {
           <p className={styles["error"]}>{errors.root.message} </p>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <Input
             name="email"
             type="email"

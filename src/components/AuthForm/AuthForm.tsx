@@ -73,7 +73,9 @@ function AuthForm({ mode = "signup" }: { mode: ModeType }) {
       <main className={styles.main}>
         <header>
           <img className={styles.logo} src={logo} alt="logo" />
-          <h1>{mode === "signup" ? "Create an account" : "Welcome back"}</h1>
+          <h1 className={styles.title}>
+            {mode === "signup" ? "Create an account" : "Welcome back"}
+          </h1>
           <p>Please enter your details</p>
         </header>
 
@@ -81,7 +83,7 @@ function AuthForm({ mode = "signup" }: { mode: ModeType }) {
           <p className={styles["error"]}>{errors.root.message} </p>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <Input
             name="email"
             type="email"
