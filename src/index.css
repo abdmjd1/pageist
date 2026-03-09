@@ -130,8 +130,7 @@ html {
   scrollbar-gutter: stable;
 }
 
-#root,
-#root > * {
+#root {
   height: 100%;
 }
 
@@ -166,7 +165,7 @@ html {
 
 body {
   height: 100dvh;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   background-color: hsl(var(--bg-clr-1));
   color: hsl(var(--txt-clr-1));

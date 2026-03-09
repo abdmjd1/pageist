@@ -9,7 +9,7 @@ function PublicRoute({ children }: PropsWithChildren) {
 
   useEffect(() => {
     if (!loading && user !== null) {
-      navigate("/", { replace: true });
+      navigate("/app", { replace: true });
     }
   }, [user, loading, navigate]);
 
