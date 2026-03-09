@@ -9,10 +9,15 @@ import SignInPage from "./pages/SignInPage/SignInPage.tsx";
 import PasswordResetPage from "./pages/PasswordResetPage/PasswordResetPage.tsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.tsx";
 import PublicRoute from "./components/PublicRoute/PublicRoute.tsx";
+import LandingPage from "./pages/LandingPage/LandingPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/app",
     element: (
       <ProtectedRoute>
         <App />
