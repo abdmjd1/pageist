@@ -14,6 +14,7 @@ function App() {
         justifyContent: "center",
         alignItems: "center",
         gap: "1rem",
+        height: "100%"
       }}
     >
       <h1>hello There. You're signed in!</h1>
