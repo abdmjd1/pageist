@@ -127,7 +127,7 @@ table {
 }
 
 html {
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 
 #root {
@@ -153,14 +153,49 @@ html {
 }
 
 :root {
+  /* use this tutorial for the theme switch" https://www.youtube.com/watch?v=kZiS1QStIWc */
+  /* and this: https://www.youtube.com/watch?v=oHcTn83M1ls&list=PLNYkxOF6rcIAaV1wwI9540OC_3XoIzMjQ&index=30 */
+  /* https://codepen.io/Juxtopposed/pen/OJBxEXV?editors=1010 */
+
+  /* add  transition: all 0.3s; to all elements so that when the theme chages they transition smoothly to the current theme*/
+
+  /* --bg-clr-1: 210, 11%, 15%; */
+  /* original v1 */
+  --bg-clr-1: 0, 0%, 10%;
+  --bg-clr-2: 0, 0%, 13%;
+
+  /* v2 */
+  /* --bg-clr-1: 0, 0%, 10%;
+  --bg-clr-2: 0, 0%, 13%;
+  --bg-clr-3: 0, 0%, 16%; */
+
+  /* v3 use this*/
+
   --bg-clr-1: 0, 0%, 10%;
   --bg-clr-2: 0, 0%, 12%;
   --bg-clr-3: 0, 0%, 14%;
   --txt-clr-1: 210, 17%, 98%;
+  /* --txt-clr-1: 0, 0%, 85%; really nice. would be great for tiptap font color (from manus.im) */
   --txt-clr-2: 225, 11%, 81%;
   --txt-clr-3: 240, 5%, 64%;
   --txt-clr-red: 0, 70%, 60%;
   --txt-clr-green: 142, 60%, 55%;
+
+  /* if you want you can use this dark theme as a lighter less contrast version of the current theme https://manus.im/ */
+  /* MAKE SURE TO ADD A REGULAR WHITE THEME BESIDES THE ONE BELOW LIKE NOTION OR https://anara.com/ */
+
+  /* based on VScode's tokyo night light  */
+  /* --bg-clr-1: 230, 25%, 96%;
+  --bg-clr-2: 230, 20%, 90%;
+  --bg-clr-3: 230, 15%, 82%;
+  --txt-clr-1: 230, 25%, 28%;
+  --txt-clr-2: 230, 18%, 40%;
+  --txt-clr-3: 230, 12%, 48%;
+  --txt-clr-red: 350, 35%, 40%;
+  --txt-clr-green: 80, 35%, 38%; */
+
+  /* --txt-clr-1: hsl(210, 17%, 98%); */
+  /* --txt-clr-2: hsl(240, 5%, 64%); */
 }
 
 body {

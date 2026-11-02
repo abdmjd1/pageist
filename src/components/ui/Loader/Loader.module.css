@@ -1,5 +1,7 @@
 .loader {
-  animation: spin 1.5s linear infinite;
+  /* MAKE THIS FASTER. FASTER LOADING ICON GIVES PERCEPTION OF A FAST APP. go from the current 1.5s to half of that */
+  /* add this as a commit in the next PR updating the projects colors */
+  animation: spin 0.35s linear infinite;
   transform-origin: center;
   will-change: transform;
 }
